@@ -10,7 +10,7 @@ PROCAT is a dataset of over 10,000 product catalogues consisting of more than 1.
 
 It contains the **text** features of offers grouped into sections such as these:
 <p float="left">
-  <img src="./img/sample_catalog_section_1.png" width="300" />
-  <img src="./img/sample_catalog_section_2.png" width="300" /> 
-  <img src="./img/sample_catalog_section_3.png" width="300" />
+  <img src="./img/sample_catalog_section_1.png" width="250" />
+  <img src="./img/sample_catalog_section_2.png" width="250" /> 
+  <img src="./img/sample_catalog_section_3.png" width="250" />
 </p>
