@@ -11,4 +11,8 @@ This repository contains the code and dependency specification required for
 PROCAT is a dataset of over 10,000 product catalogues consisting of more than 1.5 million individual product offers. This dataset lends itself to machine learning research in the area of set-to-sequence structure prediction, clustering and permutation learning.
 
 It contains the **text** features of offers grouped into sections such as these:
-<img src="./img/sample_catalog_section_1.png" width="250">
+<p float="left">
+  <img src="./img/sample_catalog_section_1.png" width="200" />
+  <img src="./img/sample_catalog_section_2.png" width="200" /> 
+  <img src="./img/sample_catalog_section_3.png" width="200" />
+</p>
