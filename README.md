@@ -25,6 +25,33 @@ The second one, titled **synthetic_experiments.ipynb** contains training and eva
 
 Each notebook starts with configuration information, which you can adjust.
 
+### Usage
+
+You must have the proper version of python installed (3.6.5). Then, create a virtual environment:
+
+`python3 -m venv /path/to/new/virtual/environment`
+
+Once the virtual environment has been installed, activate it (this may differ depending on your operating system):
+
+`source <ven_pathv>/bin/activate`
+
+Then, from within the environemnt, install all requirements from the provided file via:
+
+`(venv) python3 -m pip install -r requirements.txt`
+
+Finally, activate jupyter via the followind terminal command:
+
+`jupyter notebook` 
+
+or:
+
+`jupyter lab`
+
+depending on your preferred user interface.
+
+This should start a jupyter process, allowing you to visit `localhost:8888` and run the provided notebooks.
+
+
 ### License
 
 This content is made available under the CC BY-NC-SA license.
