@@ -37,7 +37,7 @@ Once the virtual environment has been installed, activate it (this may differ de
 
 Then, from within the environemnt, install all requirements from the provided file via:
 
-`(venv) python3 -m pip install -r requirements.txt`
+`python3 -m pip install -r requirements.txt`
 
 Finally, activate jupyter via the followind terminal command:
 
@@ -50,6 +50,10 @@ or:
 depending on your preferred user interface.
 
 This should start a jupyter process, allowing you to visit `localhost:8888` and run the provided notebooks.
+
+In order to run the main **procat_experiments.ipynb** notebook, you will need to download the dataset and unzip it, resulting in a `PROCAT` folder with the necessary `.csv`, `.pickle`, `.pb` and `.npy` files being in the same directory as the notebooks.
+
+If you wish to store & view repeated experimental results, you will also need to set up a Mongo database (instructions [here](https://docs.mongodb.com/manual/installation/#std-label-tutorial-installation)) and have a local omniboard instance running (more information [here](https://github.com/vivekratnavel/omniboard)). Alternatively, you'll need to control which cells are executed and skip the ones relating to tracking the experiment results via the **sacred** library. You can get the same metrics by running the cells marked as raw within the notebook.
 
 
 ### License
