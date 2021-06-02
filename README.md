@@ -19,9 +19,9 @@ It contains the **text** features of offers grouped into sections such as these:
 
 The repository consists primarily of two jupyter notebooks for repeated experiments.
 
-The first one, titled **procat_experiments.ipynb** contains training and evaluation code for models trained on the main PROCAT dataset. In order to run it, you first need to download it via this [dataset link](https://doi.org/10.6084/m9.figshare.14709507), unzip it and place it in the proper source folder.
+The first one, titled [procat experiments notebook](procat_experiments.ipynb) contains training and evaluation code for models trained on the main PROCAT dataset. In order to run it, you first need to download it via this [dataset link](https://doi.org/10.6084/m9.figshare.14709507), unzip it and place it in the proper source folder.
 
-The second one, titled **synthetic_experiments.ipynb** contains training and evaluation code for models trained on a synthetically generated set of simplified catalogue structures.
+The second one, titled [synthetic experiments notebook](synthetic_experiments.ipynb) contains training and evaluation code for models trained on a synthetically generated set of simplified catalogue structures.
 
 Each notebook starts with configuration information, which you can adjust.
 
