@@ -53,6 +53,47 @@ This should start a jupyter process, allowing you to visit `localhost:8888` and 
 
 In order to run the main **procat_experiments.ipynb** notebook, you will need to download the dataset and unzip it, resulting in a `PROCAT` folder with the necessary `.csv`, `.pickle`, `.pb` and `.npy` files being in the same directory as the notebooks.
 
+This should result in the following output of the `tree` command (or equivalent on your OS), when run from the directory of this repository:
+
+```asciidoc
+├── PROCAT
+│   ├── X_test.npy
+│   ├── X_test.pb
+│   ├── X_train.npy
+│   ├── X_train.pb
+│   ├── Y_test.npy
+│   ├── Y_test.pb
+│   ├── Y_train.npy
+│   ├── Y_train.pb
+│   ├── catalog_features.csv
+│   ├── catalog_test_set_features.csv
+│   ├── catalog_to_sections.pickle
+│   ├── catalog_train_set_features.csv
+│   ├── dictionary.pickle
+│   ├── offer_features.csv
+│   ├── offer_to_priority.pickle
+│   ├── offer_to_vector.pickle
+│   ├── section_features.csv
+│   ├── section_id_to_offer_priorities.pickle
+│   ├── section_id_to_offer_vectors.pickle
+│   ├── section_to_number.pickle
+│   └── section_to_offers.pickle
+├── PROCAT.zip
+├── PROCAT_mini
+├── README.md
+├── data.py
+├── img
+├── models.py
+├── procat_experiments.ipynb
+├── procat_models.py
+├── procat_utils.py
+├── requirements.txt
+├── synthetic_experiments.ipynb
+├── synthetic_functional.py
+└── utils.py
+
+```
+
 If you wish to store & view repeated experimental results, you will also need to set up a Mongo database (instructions [here](https://docs.mongodb.com/manual/installation/#std-label-tutorial-installation)) and have a local omniboard instance running (more information [here](https://github.com/vivekratnavel/omniboard)). Alternatively, you'll need to control which cells are executed and skip the ones relating to tracking the experiment results via the **sacred** library. You can get the same metrics by running the cells marked as raw within the notebook.
 
 
