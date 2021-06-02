@@ -1,6 +1,6 @@
 .idea/
 .DS_Store
-./PROCAT/*
+PROCAT/*
 PROCAT.zip
 
 # Byte-compiled / optimized / DLL files
