@@ -2,6 +2,7 @@
 .DS_Store
 PROCAT/*
 PROCAT.zip
+model/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
