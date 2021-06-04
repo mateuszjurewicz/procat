@@ -4,7 +4,7 @@
 # PROCAT: Product Catalogue Dataset for Structure Prediction
 
 ### Introduction
-This repository contains the code and dependency specification required for running repeated experiments on the titular dataset, which is publicly available under the CC BY-NC-SA license [here](https://doi.org/10.6084/m9.figshare.14709507).
+This repository contains the code and dependency specification required for running repeated experiments on the titular dataset, which is publicly available under the CC BY-NC-SA license at this [PROCAT dataset link](https://doi.org/10.6084/m9.figshare.14709507).
 
 PROCAT is a dataset of over 10,000 product catalogues consisting of more than 1.5 million individual product offers. This dataset lends itself to machine learning research in the area of set-to-sequence structure prediction, clustering and permutation learning.
 
@@ -24,6 +24,11 @@ The first one, titled [procat experiments notebook](procat_experiments.ipynb) co
 The second one, titled [synthetic experiments notebook](synthetic_experiments.ipynb) contains training and evaluation code for models trained on a synthetically generated set of simplified catalogue structures.
 
 Each notebook starts with configuration information, which you can adjust.
+
+Additionally, the best performing model is made available with the DOI `10.5281/zenodo.4896303` at this [model hosting address](https://zenodo.org/record/4896303#.YLnxgZMzbOQ). The model requires using the appropriate version of PyTorch and importing the proper model definition, as shown in the provided jupyter notebooks.
+
+
+
 
 ### Usage
 
