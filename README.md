@@ -101,7 +101,7 @@ If you wish to store & view repeated experimental results, you will also need to
 
 ### Dataset Structure
 
-If you prefer not to use the provided jupyter notebooks, the easiest way to get an overview of the files that form the PROCAT dataset, you can start by viewing the `PROCAT/offer_features.csv` file, or the `PROCAT_mini/offer_features.csv` which contains a small subset of the data in the exact same format, for quick tests.
+If you prefer not to use the provided jupyter notebooks, the easiest way to get an overview of the files that form the PROCAT dataset is to start by viewing the `PROCAT/offer_features.csv` file, or the `PROCAT_mini/offer_features.csv` which contains a small subset of the data in the exact same format, for quick tests.
 
 Every product offer instance consists of:
 
