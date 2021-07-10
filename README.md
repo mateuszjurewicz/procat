@@ -15,6 +15,8 @@ It contains the **text** features of offers grouped into sections such as these:
   <img src="./img/sample_catalog_section_3.png" width="250" />
 </p>
 
+For details regarding the format, main features and the structure of the dataset files, see the [dataset structure](#dataset-structure) section.
+
 ### Content
 
 The repository consists primarily of two jupyter notebooks for repeated experiments.
@@ -26,9 +28,6 @@ The second one, titled [synthetic experiments notebook](synthetic_experiments.ip
 Each notebook starts with configuration information, which you can adjust.
 
 Additionally, the best performing model is made available with the DOI `10.5281/zenodo.4896303` at this [model hosting address](https://zenodo.org/record/4896303#.YLnxgZMzbOQ). The model requires using the appropriate version of PyTorch and importing the proper model definition, as shown in the provided jupyter notebooks.
-
-
-
 
 ### Usage
 
@@ -83,7 +82,6 @@ This should result in the following output of the `tree` command (or equivalent 
 │   ├── section_id_to_offer_vectors.pickle
 │   ├── section_to_number.pickle
 │   └── section_to_offers.pickle
-├── PROCAT.zip
 ├── PROCAT_mini
 ├── README.md
 ├── data.py
@@ -101,6 +99,43 @@ This should result in the following output of the `tree` command (or equivalent 
 
 If you wish to store & view repeated experimental results, you will also need to set up a Mongo database (instructions [here](https://docs.mongodb.com/manual/installation/#std-label-tutorial-installation)) and have a local omniboard instance running (more information [here](https://github.com/vivekratnavel/omniboard)). Alternatively, you'll need to control which cells are executed and skip the ones relating to tracking the experiment results via the **sacred** library. You can get the same metrics by running the cells marked as raw within the notebook.
 
+### Dataset Structure
+
+If you prefer not to use the provided jupyter notebooks, the easiest way to get an overview of the files that form the PROCAT dataset, you can start by viewing the `PROCAT/offer_features.csv` file, or the `PROCAT_mini/offer_features.csv` which contains a small subset of the data in the exact same format, for quick tests.
+
+Every product offer instance consists of:
+
+* a *catalog_id* identifying the catalog that the offer belonged to.
+* a *section* marker in the form of an integer, identifying the ordered section in which the offer was placed in the original catalog.
+* an *offer_id* uniquely identifying a single product offer.
+* a *priority* rating, on a 1-3 integer scale, marking the relative in-section visual prominence of the product offer's image (primarily defined by relative size).
+* a *heading* text header of the offer.
+* a *description* text description of the offer.
+* a *text* field, with concatenated heading and description.
+* a *tokenized_text*, which consists of word tokens obtained via the appropriate NLTK tokenizer (for details see the paper).
+* a *token_length* field, measuring the number of word tokens.
+* an *offer_as_vector*, containing an array of dictionary-based integers representing words from the vocabulary.
+
+The aforementioned vocabulary mapping integers to word tokens is available as the `PROCAT/dictionary.pickle` file, along with a number of helper python dictionaries:
+
+1. `PROCAT/offer_to_priority.pickle` mapping offer ids to their in-section *priority* class.
+2. `PROCAT/offer_to_vector.pickle` mapping offer ids to their vector representations.
+3. `PROCAT/section_id_to_offer_priorities.pickle` mapping section ids to an ordered list of offer priorities.
+4. `PROCAT/section_id_to_offer_vectors.pickle` mapping section ids to the vector representations of their offers, in order.
+5. `PROCAT/section_to_offers.pickle` mapping section ids to a list of offers that comprised them.
+
+These mappings are also available from within the `PROCAT/section_features.csv` file, which maps section ids to their corresponding catalogue ids and offer features (as a list of offer ids, offer vectors and priorities).
+
+Finally, the main `PROCAT/catalog_features.csv` file contains our main X for experiments. Each row is a single catalogue, consisting of:
+
+* the catalogue id.
+* a list of its section ids, in order.
+* a list of its offer ids, in order, with section break markers.
+* a 2-dimensional array of its offers as vectors, with section break tokens.
+* a list of its offer priorities, in order.
+* the total number of offers per catalogue.
+* a single `x` matrix, ready as input to the provided set-to-sequence models, representing one random permutation of the offers vectors.
+* a single `y` array, representing the correct permutation restoring the original order of offers in the catalogue.
 
 ### License
 
